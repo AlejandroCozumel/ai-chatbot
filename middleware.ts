@@ -5,6 +5,7 @@ const isPublicRoute = createRouteMatcher([
   "/",
   "/auth(.*)",
   "/portal(.*)",
+  "/images(.*)",
   "/chatbot" // Include ignored routes as public
 ]);
 
