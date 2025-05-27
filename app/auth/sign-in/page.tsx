@@ -11,9 +11,13 @@ const SignInPage = () => {
       <div className="text-center space-y-3">
         <div className="inline-flex items-center gap-2 px-3 py-1 bg-gradient-to-r from-green-50 to-blue-50 border border-green-200/50 rounded-full">
           <LogIn className="w-4 h-4 text-green-600" />
-          <span className="text-sm font-medium text-green-700">Welcome Back</span>
+          <span className="text-sm font-medium text-green-700">
+            Welcome Back
+          </span>
         </div>
-        <h2 className="text-2xl font-bold text-gray-900">Sign in to your account</h2>
+        <h2 className="text-2xl font-bold text-gray-900">
+          Sign in to your account
+        </h2>
         <p className="text-gray-600">Continue your journey with Dalia</p>
       </div>
 
@@ -38,7 +42,9 @@ const SignInPage = () => {
                 <div className="w-full border-t border-gray-200"></div>
               </div>
               <div className="relative flex justify-center text-sm">
-                <span className="px-3 bg-white text-gray-500">New to Dalia?</span>
+                <span className="px-3 bg-white text-gray-500">
+                  New to Dalia?
+                </span>
               </div>
             </div>
 
@@ -48,7 +54,7 @@ const SignInPage = () => {
                 Don't have an account?{" "}
                 <Link
                   href="/auth/sign-up"
-                  className="font-semibold text-blue-600 hover:text-blue-500 transition-colors inline-flex items-center gap-1 hover:gap-2 transition-all"
+                  className="font-semibold text-blue-600 hover:text-blue-500 inline-flex items-center gap-1 hover:gap-2 transition-all"
                 >
                   Create one
                   <ArrowRight className="w-3 h-3" />

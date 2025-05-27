@@ -102,11 +102,11 @@ const ButtonHandler = (props: Props) => {
           </Button>
         </div>
         <div className="text-center">
-          <p className="text-sm text-muted-foreground">
+          <p className="text-sm text-gray-600">
             Already have an account?{" "}
             <Link
               href="/auth/sign-in"
-              className="font-semibold text-primary hover:text-primary/80 transition-colors"
+              className="font-semibold text-blue-600 hover:text-blue-500 inline-flex items-center gap-1 hover:gap-2 transition-all"
             >
               Sign In
             </Link>
@@ -141,11 +141,11 @@ const ButtonHandler = (props: Props) => {
           </Button>
         </div>
         <div className="text-center">
-          <p className="text-sm text-muted-foreground">
+          <p className="text-sm text-gray-600">
             Already have an account?{" "}
             <Link
               href="/auth/sign-in"
-              className="font-semibold text-primary hover:text-primary/80 transition-colors"
+              className="font-semibold text-blue-600 hover:text-blue-500 inline-flex items-center gap-1 hover:gap-2 transition-all"
             >
               Sign In
             </Link>
@@ -167,11 +167,11 @@ const ButtonHandler = (props: Props) => {
         <ArrowRight className="w-4 h-4" />
       </Button>
       <div className="text-center">
-        <p className="text-sm text-muted-foreground">
+        <p className="text-sm text-gray-600">
           Already have an account?{" "}
           <Link
             href="/auth/sign-in"
-            className="font-semibold text-primary hover:text-primary/80 transition-colors"
+            className="font-semibold text-blue-600 hover:text-blue-500 inline-flex items-center gap-1 hover:gap-2 transition-all"
           >
             Sign In
           </Link>
