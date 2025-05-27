@@ -13,7 +13,7 @@ const LoginForm = (props: Props) => {
   } = useFormContext();
   return (
     <>
-      <div className="my-4 flex flex-col gap-2">
+      <div className="flex flex-col gap-2">
         <h2 className="text-gravel md:text-4xl font-bold">Login</h2>
         <p className="text-iridium md:text-sm">
           You will receive a one time password

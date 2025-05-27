@@ -13,36 +13,22 @@ const SignUp = () => {
           <Sparkles className="w-4 h-4 text-blue-600" />
           <span className="text-sm font-medium text-blue-700">Get Started</span>
         </div>
-        <h2 className="text-2xl font-bold text-gray-900">Create your account</h2>
-        <p className="text-gray-600">Join thousands of businesses using Dalia</p>
+        <h2 className="text-2xl font-bold text-gray-900">
+          Create your account
+        </h2>
+        <p className="text-gray-600">
+          Join thousands of businesses using Dalia
+        </p>
       </div>
 
       {/* Form */}
       <SignUpFormProvider>
-        <div className="space-y-2">
+        <div className="flex flex-col gap-4">
           <RegistrationFormStep />
-          <HighLightBar />
           <ButtonHandler />
+          <HighLightBar />
         </div>
       </SignUpFormProvider>
-
-      {/* Trust indicators */}
-      <div className="pt-6 border-t border-gray-100">
-        <div className="flex items-center justify-center gap-6 text-xs text-gray-500">
-          <div className="flex items-center gap-1">
-            <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-            <span>SSL Secured</span>
-          </div>
-          <div className="flex items-center gap-1">
-            <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
-            <span>GDPR Compliant</span>
-          </div>
-          <div className="flex items-center gap-1">
-            <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
-            <span>SOC2 Certified</span>
-          </div>
-        </div>
-      </div>
     </div>
   );
 };
