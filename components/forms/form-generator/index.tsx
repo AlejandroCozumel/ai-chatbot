@@ -1,24 +1,24 @@
-import { Input } from '@/components/ui/input'
-import { Label } from '@/components/ui/label'
-import { strict } from 'assert'
-import { ErrorMessage } from '@hookform/error-message'
-import React from 'react'
-import { FieldErrors, FieldValues, UseFormRegister } from 'react-hook-form'
-import { Textarea } from '@/components/ui/textarea'
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { ErrorMessage } from "@hookform/error-message";
+import React from "react";
+import { FieldErrors, FieldValues, UseFormRegister } from "react-hook-form";
+import { Textarea } from "@/components/ui/textarea";
 
 type Props = {
-  type: 'text' | 'email' | 'password'
-  inputType: 'select' | 'input' | 'textarea'
-  options?: { value: string; label: string; id: string }[]
-  label?: string
-  placeholder: string
-  register: UseFormRegister<any>
-  name: string
-  errors: FieldErrors<FieldValues>
-  lines?: number
-  form?: string
-  defaultValue?: string
-}
+  type: "text" | "email" | "password";
+  inputType: "select" | "input" | "textarea";
+  options?: { value: string; label: string; id: string }[];
+  label?: string;
+  placeholder: string;
+  register: UseFormRegister<any>;
+  name: string;
+  errors: FieldErrors<FieldValues>;
+  lines?: number;
+  form?: string;
+  defaultValue?: string;
+  showPasswordToggle?: boolean;
+};
 
 const FormGenerator = ({
   errors,
@@ -32,50 +32,60 @@ const FormGenerator = ({
   label,
   lines,
   options,
+  showPasswordToggle,
 }: Props) => {
   switch (inputType) {
-    case 'input':
+    case "input":
     default:
       return (
-        <Label
-          className="flex flex-col gap-2"
-          htmlFor={`input-${label}`}
-        >
-          {label && label}
+        <div className="space-y-2">
           <Input
-            id={`input-${label}`}
+            id={`input-${name}`}
             type={type}
+            label={label}
             placeholder={placeholder}
             form={form}
             defaultValue={defaultValue}
+            showPasswordToggle={showPasswordToggle && type === "password"}
             {...register(name)}
           />
           <ErrorMessage
             errors={errors}
             name={name}
             render={({ message }) => (
-              <p className="text-red-400 mt-2">
-                {message === 'Required' ? '' : message}
+              <p className="text-xs text-destructive">
+                {message === "Required"
+                  ? `${label || placeholder} is required`
+                  : message}
               </p>
             )}
           />
-        </Label>
-      )
-    case 'select':
+        </div>
+      );
+
+    case "select":
       return (
-        <Label htmlFor={`select-${label}`}>
-          {label && label}
+        <div className="space-y-2">
+          {label && (
+            <Label
+              htmlFor={`select-${name}`}
+              className="text-sm font-medium text-foreground"
+            >
+              {label}
+            </Label>
+          )}
           <select
             form={form}
-            id={`select-${label}`}
+            id={`select-${name}`}
+            className="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-sm shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50"
             {...register(name)}
           >
+            <option value="" disabled>
+              {placeholder}
+            </option>
             {options?.length &&
               options.map((option) => (
-                <option
-                  value={option.value}
-                  key={option.id}
-                >
+                <option value={option.value} key={option.id}>
                   {option.label}
                 </option>
               ))}
@@ -84,41 +94,49 @@ const FormGenerator = ({
             errors={errors}
             name={name}
             render={({ message }) => (
-              <p className="text-red-400 mt-2">
-                {message === 'Required' ? '' : message}
+              <p className="text-xs text-destructive">
+                {message === "Required"
+                  ? `${label || placeholder} is required`
+                  : message}
               </p>
             )}
           />
-        </Label>
-      )
-    case 'textarea':
+        </div>
+      );
+
+    case "textarea":
       return (
-        <Label
-          className="flex flex-col gap-2"
-          htmlFor={`input-${label}`}
-        >
-          {label && label}
+        <div className="space-y-2">
+          {label && (
+            <Label
+              htmlFor={`textarea-${name}`}
+              className="text-sm font-medium text-foreground"
+            >
+              {label}
+            </Label>
+          )}
           <Textarea
             form={form}
-            id={`input-${label}`}
+            id={`textarea-${name}`}
             placeholder={placeholder}
             {...register(name)}
-            rows={lines}
+            rows={lines || 3}
             defaultValue={defaultValue}
           />
           <ErrorMessage
             errors={errors}
             name={name}
             render={({ message }) => (
-              <p className="text-red-400 mt-2">
-                {message === 'Required' ? '' : message}
+              <p className="text-xs text-destructive">
+                {message === "Required"
+                  ? `${label || placeholder} is required`
+                  : message}
               </p>
             )}
           />
-        </Label>
-      )
-      defualt: return <></>
+        </div>
+      );
   }
-}
+};
 
-export default FormGenerator
+export default FormGenerator;

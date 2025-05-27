@@ -19,11 +19,11 @@ const SignInPage = () => {
 
       {/* Form */}
       <SignInFormProvider>
-        <div className="space-y-6">
+        <div className="space-y-2">
           <LoginForm />
 
           {/* Submit Section */}
-          <div className="space-y-4">
+          <div className="space-y-4 mt-6">
             <Button
               type="submit"
               className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-medium py-3 rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 transform hover:scale-[1.02] flex items-center justify-center gap-2"

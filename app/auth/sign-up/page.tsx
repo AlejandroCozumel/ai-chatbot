@@ -2,11 +2,9 @@ import ButtonHandler from "@/components/forms/sign-up/button-handlers";
 import SignUpFormProvider from "@/components/forms/sign-up/form-provider";
 import HighLightBar from "@/components/forms/sign-up/highlight-bar";
 import RegistrationFormStep from "@/components/forms/sign-up/registration-step";
-import { ArrowRight, Sparkles, Shield, Zap } from "lucide-react";
+import { Sparkles } from "lucide-react";
 
-type Props = {};
-
-const SignUp = (props: Props) => {
+const SignUp = () => {
   return (
     <div className="space-y-8">
       {/* Header */}
@@ -21,7 +19,7 @@ const SignUp = (props: Props) => {
 
       {/* Form */}
       <SignUpFormProvider>
-        <div className="space-y-6">
+        <div className="space-y-2">
           <RegistrationFormStep />
           <HighLightBar />
           <ButtonHandler />

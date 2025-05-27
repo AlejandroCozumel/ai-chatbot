@@ -28,41 +28,54 @@ const UserTypeCard = ({
     <Label htmlFor={value}>
       <Card
         className={cn(
-          'w-full cursor-pointer',
-          userType == value && 'border-orange'
+          'w-full cursor-pointer transition-all duration-200 hover:shadow-md',
+          userType == value
+            ? 'border-primary shadow-sm ring-1 ring-primary/20'
+            : 'border-border hover:border-primary/50'
         )}
       >
-        <CardContent className="flex justify-between p-2">
-          <div className="flex items-center gap-3">
+        <CardContent className="flex justify-between p-4">
+          <div className="flex items-center gap-4">
             <Card
               className={cn(
-                'flex justify-center p-3',
-                userType == value && 'border-orange'
+                'flex justify-center p-3 transition-all duration-200',
+                userType == value
+                  ? 'border-primary bg-primary/5'
+                  : 'border-border bg-muted/50'
               )}
             >
               <User
-                size={30}
+                size={24}
                 className={cn(
-                  userType == value ? 'text-orange' : 'text-gray-400'
+                  'transition-colors duration-200',
+                  userType == value ? 'text-primary' : 'text-muted-foreground'
                 )}
               />
             </Card>
-            <div className="">
-              <CardDescription className="text-iridium">
+            <div className="space-y-2">
+              <CardDescription className={cn(
+                "font-medium text-sm transition-colors duration-200",
+                userType == value ? 'text-foreground' : 'text-muted-foreground'
+              )}>
                 {title}
               </CardDescription>
-              <CardDescription className="text-gray-400">
+              <CardDescription className="text-xs text-muted-foreground">
                 {text}
               </CardDescription>
             </div>
           </div>
-          <div>
+          <div className="flex items-center">
             <div
               className={cn(
-                'w-4 h-4 rounded-full',
-                userType == value ? 'bg-orange' : 'bg-transparent'
+                'w-5 h-5 rounded-full border-2 transition-all duration-200 flex items-center justify-center',
+                userType == value
+                  ? 'bg-primary border-primary'
+                  : 'bg-background border-muted-foreground/30'
               )}
             >
+              {userType == value && (
+                <div className="w-2 h-2 rounded-full bg-primary-foreground" />
+              )}
               <Input
                 {...register('type', {
                   onChange: (event) => setUserType(event.target.value),

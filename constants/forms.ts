@@ -1,48 +1,56 @@
 type UserRegistrationProps = {
   id: string
   type: 'email' | 'text' | 'password'
-  inputType: 'select' | 'input'
+  inputType: 'select' | 'input' | 'textarea'
   options?: { value: string; label: string; id: string }[]
   label?: string
   placeholder: string
   name: string
+  showPasswordToggle?: boolean
 }
 
 export const USER_REGISTRATION_FORM: UserRegistrationProps[] = [
   {
     id: '1',
     inputType: 'input',
-    placeholder: 'Full name',
+    label: 'Full Name',
+    placeholder: 'Enter your full name',
     name: 'fullname',
     type: 'text',
   },
   {
     id: '2',
     inputType: 'input',
-    placeholder: 'Email',
+    label: 'Email Address',
+    placeholder: 'Enter your email',
     name: 'email',
     type: 'email',
   },
   {
     id: '3',
     inputType: 'input',
-    placeholder: 'Confirm Email',
+    label: 'Confirm Email',
+    placeholder: 'Confirm your email',
     name: 'confirmEmail',
     type: 'email',
   },
   {
     id: '4',
     inputType: 'input',
-    placeholder: 'Password',
+    label: 'Password',
+    placeholder: 'Create a password',
     name: 'password',
     type: 'password',
+    showPasswordToggle: true,
   },
   {
     id: '5',
     inputType: 'input',
-    placeholder: 'Confrim Password',
+    label: 'Confirm Password',
+    placeholder: 'Confirm your password',
     name: 'confirmPassword',
     type: 'password',
+    showPasswordToggle: true,
   },
 ]
 
@@ -50,6 +58,7 @@ export const USER_LOGIN_FORM: UserRegistrationProps[] = [
   {
     id: '1',
     inputType: 'input',
+    label: 'Email Address',
     placeholder: 'Enter your email',
     name: 'email',
     type: 'email',
@@ -57,8 +66,10 @@ export const USER_LOGIN_FORM: UserRegistrationProps[] = [
   {
     id: '2',
     inputType: 'input',
-    placeholder: 'Password',
+    label: 'Password',
+    placeholder: 'Enter your password',
     name: 'password',
     type: 'password',
+    showPasswordToggle: true,
   },
 ]

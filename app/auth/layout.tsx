@@ -23,6 +23,18 @@ const Layout = async ({ children }: Props) => {
         </div>
 
         <div className="w-full max-w-md space-y-8 relative z-10">
+          {/* Logo Section */}
+          <div className="text-center space-y-6">
+            <div className="transform hover:scale-105 transition-transform duration-300">
+              <Image
+                src="/images/daliaLogo.svg"
+                alt="Dalia Logo"
+                width={120}
+                height={40}
+                className="mx-auto"
+              />
+            </div>
+          </div>
 
           {/* Form Container with glass morphism */}
           <div className="bg-white/70 backdrop-blur-sm border border-white/20 rounded-2xl p-8 shadow-xl shadow-black/5">
