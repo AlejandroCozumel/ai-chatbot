@@ -28,7 +28,7 @@ const UserTypeCard = ({
     <Label htmlFor={value}>
       <Card
         className={cn(
-          'w-full cursor-pointer transition-all duration-200 hover:shadow-md bg-card',
+          'w-full cursor-pointer transition-all duration-200 hover:shadow-md bg-muted',
           userType == value
             ? 'border-primary shadow-sm ring-1 ring-primary/20'
             : 'border-border hover:border-primary/50'

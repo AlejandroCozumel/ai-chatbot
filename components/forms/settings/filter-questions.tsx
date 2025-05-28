@@ -21,9 +21,9 @@ const FilterQuestions = ({ id }: Props) => {
     useFilterQuestions(id)
 
   return (
-    <Card className="w-full grid grid-cols-1 lg:grid-cols-2">
-      <CardContent className="p-6 border-r-[1px]">
-        <CardTitle>Bot Questions</CardTitle>
+    <Card className="w-full grid grid-cols-1 lg:grid-cols-2 bg-card text-card-foreground border-border">
+      <CardContent className="p-6 border-r border-border">
+        <CardTitle className="text-foreground">Bot Questions</CardTitle>
         <form
           onSubmit={onAddFilterQuestions}
           className="flex flex-col gap-6 mt-10"
@@ -46,7 +46,7 @@ const FilterQuestions = ({ id }: Props) => {
           <div className="flex flex-col gap-3">
             <Section
               label="Answer to question"
-              message="The anwer for the question above"
+              message="The answer for the question above"
             />
             <FormGenerator
               inputType="textarea"
@@ -61,9 +61,9 @@ const FilterQuestions = ({ id }: Props) => {
           </div>
           <Button
             type="submit"
-            className="bg-orange hover:bg-orange hover:opacity-70 transition duration-150 ease-in-out text-white font-semibold"
+            className="bg-warning text-warning-foreground hover:bg-warning/90 transition-all duration-200 font-semibold shadow-lg hover:shadow-xl"
           >
-            Create
+            <Loader loading={loading}>Create</Loader>
           </Button>
         </form>
       </CardContent>
@@ -73,13 +73,13 @@ const FilterQuestions = ({ id }: Props) => {
             isQuestions.map((question) => (
               <p
                 key={question.id}
-                className="font-bold"
+                className="font-bold text-foreground mb-3"
               >
                 {question.question}
               </p>
             ))
           ) : (
-            <CardDescription>No Questions</CardDescription>
+            <CardDescription className="text-muted-foreground">No Questions</CardDescription>
           )}
         </Loader>
       </CardContent>
