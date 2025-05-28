@@ -28,10 +28,10 @@ const UserTypeCard = ({
     <Label htmlFor={value}>
       <Card
         className={cn(
-          'w-full cursor-pointer transition-all duration-200 hover:shadow-md dark:hover:shadow-lg dark:hover:shadow-black/10',
+          'w-full cursor-pointer transition-all duration-200 hover:shadow-md bg-card',
           userType == value
-            ? 'border-primary shadow-sm ring-1 ring-primary/20 dark:ring-primary/30 dark:shadow-primary/5'
-            : 'border-border dark:border-gray-700 hover:border-primary/50 dark:hover:border-primary/40 bg-card dark:bg-gray-800/50'
+            ? 'border-primary shadow-sm ring-1 ring-primary/20'
+            : 'border-border hover:border-primary/50'
         )}
       >
         <CardContent className="flex justify-between p-4">
@@ -40,8 +40,8 @@ const UserTypeCard = ({
               className={cn(
                 'flex justify-center p-3 transition-all duration-200',
                 userType == value
-                  ? 'border-primary bg-primary/5 dark:bg-primary/10 dark:border-primary/80'
-                  : 'border-border dark:border-gray-600 bg-muted/50 dark:bg-gray-700/50'
+                  ? 'border-primary bg-primary/5'
+                  : 'border-border bg-muted/50'
               )}
             >
               <User
@@ -49,8 +49,8 @@ const UserTypeCard = ({
                 className={cn(
                   'transition-colors duration-200',
                   userType == value
-                    ? 'text-primary dark:text-primary'
-                    : 'text-muted-foreground dark:text-gray-400'
+                    ? 'text-primary'
+                    : 'text-muted-foreground'
                 )}
               />
             </Card>
@@ -58,12 +58,12 @@ const UserTypeCard = ({
               <CardDescription className={cn(
                 "font-medium text-sm transition-colors duration-200",
                 userType == value
-                  ? 'text-foreground dark:text-gray-100'
-                  : 'text-muted-foreground dark:text-gray-400'
+                  ? 'text-foreground'
+                  : 'text-muted-foreground'
               )}>
                 {title}
               </CardDescription>
-              <CardDescription className="text-xs text-muted-foreground dark:text-gray-500">
+              <CardDescription className="text-xs text-muted-foreground">
                 {text}
               </CardDescription>
             </div>
@@ -73,12 +73,12 @@ const UserTypeCard = ({
               className={cn(
                 'w-5 h-5 rounded-full border-2 transition-all duration-200 flex items-center justify-center',
                 userType == value
-                  ? 'bg-primary border-primary dark:bg-primary dark:border-primary'
-                  : 'bg-background dark:bg-gray-800 border-muted-foreground/30 dark:border-gray-600'
+                  ? 'bg-primary border-primary'
+                  : 'bg-background border-muted-foreground/30'
               )}
             >
               {userType == value && (
-                <div className="w-2 h-2 rounded-full bg-primary-foreground dark:bg-white" />
+                <div className="w-2 h-2 rounded-full bg-primary-foreground" />
               )}
               <Input
                 {...register('type', {

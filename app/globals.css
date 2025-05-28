@@ -37,6 +37,21 @@
   --color-popover: var(--popover);
   --color-card-foreground: var(--card-foreground);
   --color-card: var(--card);
+
+  /* Add these new colors */
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+  --color-info: var(--info);
+  --color-info-foreground: var(--info-foreground);
+  --color-warning: var(--warning);
+  --color-warning-foreground: var(--warning-foreground);
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+  --color-info: var(--info);
+  --color-info-foreground: var(--info-foreground);
+  --color-warning: var(--warning);
+  --color-warning-foreground: var(--warning-foreground);
+
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -63,19 +78,31 @@
   --border: oklch(0.929 0.013 255.508);
   --input: oklch(0.929 0.013 255.508);
   --ring: oklch(0.545 0.235 288.4); /* Purple ring */
-  --chart-1: oklch(0.545 0.235 288.4); /* Primary purple */
+
+  /* More vibrant badge/semantic colors for light mode */
+  --success: oklch(0.55 0.18 145); /* More vibrant green */
+  --success-foreground: oklch(0.98 0.02 145);
+  --info: oklch(0.58 0.2 230); /* More vibrant blue */
+  --info-foreground: oklch(0.98 0.02 230);
+  --warning: oklch(0.75 0.25 75); /* More vibrant orange/yellow */
+  --warning-foreground: oklch(0.15 0.05 75);
+
+  /* Chart colors remain the same */
+  --chart-1: oklch(0.545 0.235 288.4);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.7 0.18 308.4); /* Lighter purple variant */
-  --chart-5: oklch(0.45 0.25 268.4); /* Darker purple variant */
+  --chart-4: oklch(0.7 0.18 308.4);
+  --chart-5: oklch(0.45 0.25 268.4);
+
+  /* Sidebar colors */
   --sidebar: oklch(0.984 0.003 247.858);
   --sidebar-foreground: oklch(0.129 0.042 264.695);
-  --sidebar-primary: oklch(0.545 0.235 288.4); /* Purple */
+  --sidebar-primary: oklch(0.545 0.235 288.4);
   --sidebar-primary-foreground: oklch(0.984 0.003 247.858);
   --sidebar-accent: oklch(0.95 0.02 288.4);
   --sidebar-accent-foreground: oklch(0.545 0.235 288.4);
   --sidebar-border: oklch(0.929 0.013 255.508);
-  --sidebar-ring: oklch(0.545 0.235 288.4); /* Purple ring */
+  --sidebar-ring: oklch(0.545 0.235 288.4);
 }
 
 .dark {
@@ -96,20 +123,32 @@
   --destructive: oklch(0.704 0.191 22.216);
   --border: oklch(1 0 0 / 10%);
   --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.7 0.2 288.4); /* Purple ring for dark mode */
-  --chart-1: oklch(0.7 0.2 288.4); /* Primary purple */
+  --ring: oklch(0.7 0.2 288.4);
+
+  /* Dark mode badge/semantic colors */
+  --success: oklch(0.6 0.15 145); /* Adjusted for dark mode */
+  --success-foreground: oklch(0.95 0.05 145);
+  --info: oklch(0.65 0.18 230); /* Adjusted for dark mode */
+  --info-foreground: oklch(0.95 0.05 230);
+  --warning: oklch(0.7 0.2 75); /* Adjusted for dark mode */
+  --warning-foreground: oklch(0.95 0.05 75);
+
+  /* Dark mode chart colors */
+  --chart-1: oklch(0.7 0.2 288.4);
   --chart-2: oklch(0.696 0.17 162.48);
   --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.8 0.15 308.4); /* Lighter purple variant */
-  --chart-5: oklch(0.6 0.25 268.4); /* Darker purple variant */
+  --chart-4: oklch(0.8 0.15 308.4);
+  --chart-5: oklch(0.6 0.25 268.4);
+
+  /* Dark mode sidebar colors */
   --sidebar: oklch(0.208 0.042 265.755);
   --sidebar-foreground: oklch(0.984 0.003 247.858);
-  --sidebar-primary: oklch(0.7 0.2 288.4); /* Purple */
+  --sidebar-primary: oklch(0.7 0.2 288.4);
   --sidebar-primary-foreground: oklch(0.984 0.003 247.858);
   --sidebar-accent: oklch(0.279 0.041 260.031);
   --sidebar-accent-foreground: oklch(0.984 0.003 247.858);
   --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.7 0.2 288.4); /* Purple ring */
+  --sidebar-ring: oklch(0.7 0.2 288.4);
 }
 
 @layer base {
@@ -158,7 +197,7 @@ body {
 
 .typing .dot {
   animation: mercuryTypingAnimation 1.8s infinite ease-in-out;
-  background-color: #8A46EA; /* Your purple base color */
+  background-color: #8a46ea; /* Your purple base color */
   border-radius: 50%;
   height: 7px;
   margin-right: 4px;
@@ -183,15 +222,15 @@ body {
 @keyframes mercuryTypingAnimation {
   0% {
     transform: translateY(0px);
-    background-color: #8A46EA; /* Your purple base */
+    background-color: #8a46ea; /* Your purple base */
   }
   28% {
     transform: translateY(-7px);
-    background-color: #7B3DD9; /* Darker purple */
+    background-color: #7b3dd9; /* Darker purple */
   }
   44% {
     transform: translateY(0px);
-    background-color: #A866F0; /* Lighter purple */
+    background-color: #a866f0; /* Lighter purple */
   }
 }
 

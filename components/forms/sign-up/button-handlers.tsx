@@ -81,7 +81,7 @@ const ButtonHandler = (props: Props) => {
   // Step 3 - Create Account
   if (currentStep === 3) {
     return (
-      <div className="w-full space-y-4">
+      <div className="w-full space-y-4 mt-2">
         <div className="flex gap-3">
           <Button
             type="button"
@@ -119,7 +119,7 @@ const ButtonHandler = (props: Props) => {
   // Step 2 - Continue with OTP
   if (currentStep === 2) {
     return (
-      <div className="w-full space-y-4">
+      <div className="w-full space-y-4 mt-2">
         <div className="flex gap-3">
           <Button
             type="button"
@@ -157,7 +157,7 @@ const ButtonHandler = (props: Props) => {
 
   // Step 1 - Initial Continue
   return (
-    <div className="w-full space-y-4">
+    <div className="w-full space-y-4 mt-2">
       <Button
         type="button"
         onClick={handleContinue}

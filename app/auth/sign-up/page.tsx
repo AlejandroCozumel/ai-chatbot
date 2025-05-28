@@ -2,6 +2,7 @@ import ButtonHandler from "@/components/forms/sign-up/button-handlers";
 import SignUpFormProvider from "@/components/forms/sign-up/form-provider";
 import HighLightBar from "@/components/forms/sign-up/highlight-bar";
 import RegistrationFormStep from "@/components/forms/sign-up/registration-step";
+import { Badge } from "@/components/ui/badge";
 import { Sparkles } from "lucide-react";
 
 const SignUp = () => {
@@ -9,14 +10,14 @@ const SignUp = () => {
     <div className="space-y-8">
       {/* Header */}
       <div className="text-center space-y-3">
-        <div className="inline-flex items-center gap-2 px-3 py-1 bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-900/30 dark:to-purple-900/30 border border-blue-200/50 dark:border-blue-700/50 rounded-full">
-          <Sparkles className="w-4 h-4 text-blue-600 dark:text-blue-400" />
-          <span className="text-sm font-medium text-blue-700 dark:text-blue-300">Get Started</span>
-        </div>
-        <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100">
+        <Badge variant="info" className="px-3 py-1 gap-2">
+          <Sparkles className="w-4 h-4" />
+          Get Started
+        </Badge>
+        <h2 className="text-2xl font-bold text-foreground">
           Create your account
         </h2>
-        <p className="text-gray-600 dark:text-gray-400">
+        <p className="text-foreground">
           Join thousands of businesses using Dalia
         </p>
       </div>

@@ -12,19 +12,19 @@ const HighLightBar = (props: Props) => {
       <div
         className={cn(
           'rounded-full h-2 col-span-1 transition-colors duration-300',
-          currentStep == 1 ? 'bg-primary' : 'bg-muted dark:bg-gray-700'
+          currentStep == 1 ? 'bg-primary' : 'bg-muted'
         )}
       ></div>
       <div
         className={cn(
           'rounded-full h-2 col-span-1 transition-colors duration-300',
-          currentStep == 2 ? 'bg-primary' : 'bg-muted dark:bg-gray-700'
+          currentStep == 2 ? 'bg-primary' : 'bg-muted'
         )}
       ></div>
       <div
         className={cn(
           'rounded-full h-2 col-span-1 transition-colors duration-300',
-          currentStep == 3 ? 'bg-primary' : 'bg-muted dark:bg-gray-700'
+          currentStep == 3 ? 'bg-primary' : 'bg-muted'
         )}
       ></div>
     </div>
