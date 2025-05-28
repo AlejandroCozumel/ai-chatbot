@@ -26,10 +26,10 @@ export const MinMenu = ({
 }: MinMenuProps) => {
   return (
     <div className="p-3 flex flex-col items-center h-full">
-      <span className="animate-fade-in opacity-0 delay-300 fill-mode-forwards cursor-pointer">
-        <Menu onClick={onShrink} />
+      <span className="animate-fade-in opacity-100 delay-300 cursor-pointer">
+        <Menu onClick={onShrink} className="h-6 w-6" />
       </span>
-      <div className="animate-fade-in opacity-0 delay-300 fill-mode-forwards flex flex-col justify-between h-full pt-10">
+      <div className="animate-fade-in opacity-100 delay-300 flex flex-col justify-between h-full pt-10">
         <div className="flex flex-col">
           {SIDE_BAR_MENU.map((menu, key) => (
             <MenuItem size="min" {...menu} key={key} current={current} />
@@ -40,13 +40,13 @@ export const MinMenu = ({
           <MenuItem
             size="min"
             label="Sign out"
-            icon={<LogOut />}
+            icon={<LogOut className="h-4 w-4" />}
             onSignOut={onSignOut}
           />
           <MenuItem
             size="min"
             label="Mobile App"
-            icon={<MonitorSmartphone />}
+            icon={<MonitorSmartphone className="h-4 w-4" />}
           />
         </div>
       </div>

@@ -1,6 +1,6 @@
 import { cn } from '@/lib/utils'
 import Link from 'next/link'
-import React from 'react'
+import React, { JSX } from 'react'
 
 type Props = {
   size: 'max' | 'min'
@@ -12,18 +12,40 @@ type Props = {
 }
 
 const MenuItem = ({ size, path, icon, label, current, onSignOut }: Props) => {
+  // For sign out items without a path, render as button
+  if (onSignOut && !path) {
+    const ButtonContent = size === 'max'
+      ? <>{icon} {label}</>
+      : icon;
+
+    return (
+      <button
+        onClick={onSignOut}
+        className={cn(
+          'transition-colors duration-200 rounded-lg my-1 text-left',
+          size === 'max'
+            ? 'flex items-center gap-2 px-1 py-2'
+            : 'flex justify-center items-center py-2',
+          'text-muted-foreground hover:text-foreground hover:bg-accent'
+        )}
+      >
+        {ButtonContent}
+      </button>
+    )
+  }
+
+  // For navigation items
   switch (size) {
     case 'max':
       return (
         <Link
-          onClick={onSignOut}
           className={cn(
-            'flex items-center gap-2 px-1 py-2 rounded-lg my-1',
+            'flex items-center gap-2 p-2 rounded-lg my-1 transition-colors duration-200',
             !current
-              ? 'text-gray-500'
-              : current == path
-              ? 'bg-white font-bold text-black'
-              : 'text-gray-500'
+              ? 'text-muted-foreground hover:text-foreground hover:bg-accent'
+              : current === path
+              ? 'bg-sidebar-accent text-sidebar-accent-foreground font-bold'
+              : 'text-muted-foreground hover:text-foreground hover:bg-accent'
           )}
           href={path ? `/${path}` : '#'}
         >
@@ -33,14 +55,13 @@ const MenuItem = ({ size, path, icon, label, current, onSignOut }: Props) => {
     case 'min':
       return (
         <Link
-          onClick={onSignOut}
           className={cn(
+            'flex justify-center items-center rounded-lg p-2 my-1 transition-colors duration-200',
             !current
-              ? 'text-gray-500'
-              : current == path
-              ? 'bg-white font-bold text-black'
-              : 'text-gray-500',
-            'rounded-lg py-2 my-1'
+              ? 'text-muted-foreground hover:text-foreground hover:bg-accent'
+              : current === path
+              ? 'bg-sidebar-accent text-sidebar-accent-foreground font-bold'
+              : 'text-muted-foreground hover:text-foreground hover:bg-accent'
           )}
           href={path ? `/${path}` : '#'}
         >

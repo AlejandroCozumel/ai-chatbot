@@ -10,12 +10,11 @@ type Props = {
 const OwnerLayout = async ({ children }: Props) => {
   const authenticated = await onLoginUser()
   if (!authenticated) return null
-console.log(authenticated.domain)
   return (
     <ChatProvider>
       <div className="flex h-screen w-full">
         <SideBar domains={authenticated.domain} />
-        <div className="w-full h-screen flex flex-col pl-20 md:pl-4">
+        <div className="w-full h-screen flex flex-col mx-auto px-4 md:px-8 lg:px-12 py-4">
           {children}
         </div>
       </div>
