@@ -12,14 +12,14 @@ const Layout = async ({ children }: Props) => {
   if (userId) redirect('/')
 
   return (
-    <div className="min-h-screen flex w-full bg-gradient-to-br from-slate-50 via-white to-blue-50">
+    <div className="min-h-screen flex w-full bg-gradient-to-br from-slate-50 via-white to-blue-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
       {/* Left Panel - Form Section */}
       <div className="w-full lg:w-1/2 flex flex-col justify-center items-center p-8 relative">
         {/* Floating orbs background */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-20 left-20 w-32 h-32 bg-blue-200/30 rounded-full blur-xl animate-pulse"></div>
-          <div className="absolute bottom-32 right-16 w-48 h-48 bg-purple-200/20 rounded-full blur-2xl animate-pulse delay-1000"></div>
-          <div className="absolute top-1/2 left-8 w-24 h-24 bg-pink-200/25 rounded-full blur-lg animate-pulse delay-500"></div>
+          <div className="absolute top-20 left-20 w-32 h-32 bg-blue-200/30 dark:bg-blue-500/20 rounded-full blur-xl animate-pulse"></div>
+          <div className="absolute bottom-32 right-16 w-48 h-48 bg-purple-200/20 dark:bg-purple-500/15 rounded-full blur-2xl animate-pulse delay-1000"></div>
+          <div className="absolute top-1/2 left-8 w-24 h-24 bg-pink-200/25 dark:bg-pink-500/20 rounded-full blur-lg animate-pulse delay-500"></div>
         </div>
 
         <div className="w-full max-w-md space-y-8 relative z-10">
@@ -37,23 +37,23 @@ const Layout = async ({ children }: Props) => {
           </div>
 
           {/* Form Container with glass morphism */}
-          <div className="bg-white/70 backdrop-blur-sm border border-white/20 rounded-2xl p-8 shadow-xl shadow-black/5">
+          <div className="bg-white/70 dark:bg-gray-800/70 backdrop-blur-sm border border-white/20 dark:border-gray-700/30 rounded-2xl p-8 shadow-xl shadow-black/5 dark:shadow-black/20">
             {children}
           </div>
 
           {/* Footer */}
-          <div className="text-center text-xs text-gray-500">
+          <div className="text-center text-xs text-gray-500 dark:text-gray-400">
             <p>Protected by industry-standard encryption</p>
           </div>
         </div>
       </div>
 
       {/* Right Panel - Hero Section */}
-      <div className="hidden lg:flex lg:w-3/5 bg-gradient-to-br from-blue-600 via-purple-600 to-indigo-700 relative overflow-hidden">
+      <div className="hidden lg:flex lg:w-3/5 bg-gradient-to-br from-blue-600 via-purple-600 to-indigo-700 dark:from-blue-800 dark:via-purple-800 dark:to-indigo-900 relative overflow-hidden">
         {/* Animated background pattern */}
         <div className="absolute inset-0">
-          <div className="absolute inset-0 opacity-10">
-            <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent"></div>
+          <div className="absolute inset-0 opacity-10 dark:opacity-5">
+            <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent dark:from-white/10"></div>
             <div
               className="absolute inset-0 animate-pulse"
               style={{
@@ -71,20 +71,20 @@ const Layout = async ({ children }: Props) => {
             <div className="space-y-6">
               {/* Hero Content */}
               <div className="space-y-4">
-                <div className="inline-flex items-center px-3 py-1 rounded-full bg-white/10 backdrop-blur-sm border border-white/20">
-                  <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse mr-2"></span>
+                <div className="inline-flex items-center px-3 py-1 rounded-full bg-white/10 dark:bg-white/15 backdrop-blur-sm border border-white/20 dark:border-white/25">
+                  <span className="w-2 h-2 bg-green-400 dark:bg-green-300 rounded-full animate-pulse mr-2"></span>
                   <span className="text-sm font-medium">AI-Powered Assistant</span>
                 </div>
 
                 <h2 className="text-3xl xl:text-4xl font-bold leading-tight">
                   Meet Dalia, your
-                  <span className="block bg-gradient-to-r from-yellow-300 to-pink-300 bg-clip-text text-transparent">
+                  <span className="block bg-gradient-to-r from-yellow-300 to-pink-300 dark:from-yellow-200 dark:to-pink-200 bg-clip-text text-transparent">
                     intelligent sales
                   </span>
                   companion
                 </h2>
 
-                <p className="text-base text-blue-100 leading-relaxed">
+                <p className="text-base text-blue-100 dark:text-blue-50 leading-relaxed">
                   Revolutionary lead capture without forms. Experience the future of
                   customer engagement with AI that understands and converts.
                 </p>
@@ -103,8 +103,8 @@ const Layout = async ({ children }: Props) => {
                     className="flex items-center space-x-3 animate-fade-in"
                     style={{ animationDelay: `${index * 200}ms` }}
                   >
-                    <div className="w-2 h-2 bg-gradient-to-r from-yellow-400 to-pink-400 rounded-full flex-shrink-0"></div>
-                    <span className="text-blue-100 text-sm">{feature}</span>
+                    <div className="w-2 h-2 bg-gradient-to-r from-yellow-400 to-pink-400 dark:from-yellow-300 dark:to-pink-300 rounded-full flex-shrink-0"></div>
+                    <span className="text-blue-100 dark:text-blue-50 text-sm">{feature}</span>
                   </div>
                 ))}
               </div>
@@ -115,7 +115,7 @@ const Layout = async ({ children }: Props) => {
           <div className="relative w-1/2 flex items-center justify-start overflow-hidden">
             {/* App Preview */}
             <div className="relative -mr-32 xl:-mr-48">
-              <div className="absolute inset-0 bg-gradient-to-l from-blue-600/30 to-transparent rounded-l-3xl z-10"></div>
+              <div className="absolute inset-0 bg-gradient-to-l from-blue-600/30 dark:from-blue-800/40 to-transparent rounded-l-3xl z-10"></div>
               <Image
                 src="/images/app-ui.jpg"
                 alt="Dalia Dashboard Preview"
@@ -124,10 +124,10 @@ const Layout = async ({ children }: Props) => {
                 className="rounded-l-3xl shadow-2xl transform hover:scale-105 transition-transform duration-700 object-cover"
               />
               {/* Floating stats */}
-              <div className="absolute top-8 left-8 bg-white/90 backdrop-blur-sm rounded-2xl p-4 shadow-xl z-20">
+              <div className="absolute top-8 left-8 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-2xl p-4 shadow-xl z-20">
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-gray-900">94%</div>
-                  <div className="text-xs text-gray-600">Conversion Rate</div>
+                  <div className="text-2xl font-bold text-gray-900 dark:text-gray-100">94%</div>
+                  <div className="text-xs text-gray-600 dark:text-gray-400">Conversion Rate</div>
                 </div>
               </div>
             </div>

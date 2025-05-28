@@ -53,7 +53,7 @@ const FormGenerator = ({
             errors={errors}
             name={name}
             render={({ message }) => (
-              <p className="text-xs text-destructive">
+              <p className="text-xs text-destructive dark:text-red-400">
                 {message === "Required"
                   ? `${label || placeholder} is required`
                   : message}
@@ -69,7 +69,7 @@ const FormGenerator = ({
           {label && (
             <Label
               htmlFor={`select-${name}`}
-              className="text-sm font-medium text-foreground"
+              className="text-sm font-medium text-foreground dark:text-gray-200"
             >
               {label}
             </Label>
@@ -77,15 +77,15 @@ const FormGenerator = ({
           <select
             form={form}
             id={`select-${name}`}
-            className="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-sm shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50"
+            className="flex h-9 w-full rounded-md border border-input dark:border-gray-600 bg-transparent dark:bg-gray-800 px-3 py-1 text-sm text-foreground dark:text-gray-200 shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground dark:placeholder:text-gray-400 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring dark:focus-visible:ring-blue-400 disabled:cursor-not-allowed disabled:opacity-50"
             {...register(name)}
           >
-            <option value="" disabled>
+            <option value="" disabled className="dark:bg-gray-800 dark:text-gray-200">
               {placeholder}
             </option>
             {options?.length &&
               options.map((option) => (
-                <option value={option.value} key={option.id}>
+                <option value={option.value} key={option.id} className="dark:bg-gray-800 dark:text-gray-200">
                   {option.label}
                 </option>
               ))}
@@ -94,7 +94,7 @@ const FormGenerator = ({
             errors={errors}
             name={name}
             render={({ message }) => (
-              <p className="text-xs text-destructive">
+              <p className="text-xs text-destructive dark:text-red-400">
                 {message === "Required"
                   ? `${label || placeholder} is required`
                   : message}
@@ -110,7 +110,7 @@ const FormGenerator = ({
           {label && (
             <Label
               htmlFor={`textarea-${name}`}
-              className="text-sm font-medium text-foreground"
+              className="text-sm font-medium text-foreground dark:text-gray-200"
             >
               {label}
             </Label>
@@ -122,12 +122,13 @@ const FormGenerator = ({
             {...register(name)}
             rows={lines || 3}
             defaultValue={defaultValue}
+            className="dark:bg-gray-800 dark:border-gray-600 dark:text-gray-200 dark:placeholder:text-gray-400"
           />
           <ErrorMessage
             errors={errors}
             name={name}
             render={({ message }) => (
-              <p className="text-xs text-destructive">
+              <p className="text-xs text-destructive dark:text-red-400">
                 {message === "Required"
                   ? `${label || placeholder} is required`
                   : message}
