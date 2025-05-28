@@ -17,7 +17,7 @@ const SignUp = () => {
         <h2 className="text-2xl font-bold text-foreground">
           Create your account
         </h2>
-        <p className="text-foreground">
+        <p className="text-muted-foreground">
           Join thousands of businesses using Dalia
         </p>
       </div>

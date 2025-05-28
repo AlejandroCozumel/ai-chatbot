@@ -26,7 +26,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
     const shouldShowToggle = showPasswordToggle && type === 'password'
 
     return (
-      <div className="space-y-2">
+      <div className="flex flex-col gap-2">
         {label && (
           <label
             htmlFor={props.id || props.name}

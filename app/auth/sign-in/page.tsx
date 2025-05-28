@@ -17,7 +17,7 @@ const SignInPage = () => {
         <h2 className="text-2xl font-bold text-foreground">
           Sign in to your account
         </h2>
-        <p className="text-foreground">Continue your journey with Dalia</p>
+        <p className="text-muted-foreground">Continue your journey with Dalia</p>
       </div>
 
       {/* Form */}
