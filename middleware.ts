@@ -7,7 +7,7 @@ const isPublicRoute = createRouteMatcher([
   "/auth(.*)",
   "/portal(.*)",
   "/images(.*)",
-  "/chatbot" // Include ignored routes as public
+  "/chatbot(.*)" // Include ignored routes as public
 ]);
 
 export default clerkMiddleware(async (auth, req) => {
