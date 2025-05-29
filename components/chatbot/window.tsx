@@ -70,7 +70,7 @@ export const BotWindow = forwardRef<HTMLDivElement, Props>(
     ref
   ) => {
     return (
-      <div className="w-96 h-[600px] bg-background rounded-2xl shadow-2xl border border-border overflow-hidden flex flex-col">
+      <div className="w-96 h-[600px] bg-background rounded-2xl shadow-2xl border border-border overflow-hidden flex flex-col justify-between">
         {/* Header */}
         <div className="bg-primary text-primary-foreground px-6 py-4 flex items-center justify-between">
           <div className="flex items-center gap-3">
