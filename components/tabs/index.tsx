@@ -16,7 +16,7 @@ const TabsMenu = ({ triggers, children, className, button }: Props) => {
   return (
     <Tabs
       defaultValue={triggers[0].label}
-      className="w-full"
+      className="w-full h-full"
     >
       <TabsList className={cn('', className)}>
         {triggers.map((trigger, key) => (

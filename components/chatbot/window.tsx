@@ -183,7 +183,7 @@ export const BotWindow = forwardRef<HTMLDivElement, Props>(
 
           <TabsContent value="helpdesk" className="mt-0 flex-1">
             <div className="h-full overflow-y-auto p-4 space-y-4">
-              <div className="text-center py-4">
+              <div className="text-center">
                 <h4 className="font-semibold text-foreground mb-2">
                   💡 Frequently Asked Questions
                 </h4>
