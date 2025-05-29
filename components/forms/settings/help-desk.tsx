@@ -1,34 +1,31 @@
-'use client'
-import React from 'react'
-import { useHelpDesk } from '@/hooks/settings/use-settings'
+"use client";
+import React from "react";
+import { useHelpDesk } from "@/hooks/settings/use-settings";
 import {
   Card,
   CardContent,
   CardDescription,
   CardTitle,
-} from '@/components/ui/card'
-import Section from '@/components/section-label'
-import FormGenerator from '../form-generator'
-import { Button } from '@/components/ui/button'
-import { Loader } from '@/components/loader'
-import Accordion from '@/components/accordion'
+} from "@/components/ui/card";
+import Section from "@/components/section-label";
+import FormGenerator from "../form-generator";
+import { Button } from "@/components/ui/button";
+import { Loader } from "@/components/loader";
+import Accordion from "@/components/accordion";
 
 type Props = {
-  id: string
-}
+  id: string;
+};
 
 const HelpDesk = ({ id }: Props) => {
   const { register, errors, onSubmitQuestion, isQuestions, loading } =
-    useHelpDesk(id)
+    useHelpDesk(id);
 
   return (
     <Card className="w-full grid grid-cols-1 lg:grid-cols-2 bg-card text-card-foreground border-border">
       <CardContent className="p-6 border-r border-border">
         <CardTitle className="text-foreground">Help Desk</CardTitle>
-        <form
-          onSubmit={onSubmitQuestion}
-          className="flex flex-col gap-6 mt-10"
-        >
+        <form onSubmit={onSubmitQuestion} className="flex flex-col gap-6 mt-10">
           <div className="flex flex-col gap-3">
             <Section
               label="Question"
@@ -60,10 +57,7 @@ const HelpDesk = ({ id }: Props) => {
               lines={5}
             />
           </div>
-          <Button
-            type="submit"
-            className="bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-200 font-semibold shadow-lg hover:shadow-xl"
-          >
+          <Button type="submit" variant="default">
             <Loader loading={loading}>Create</Loader>
           </Button>
         </form>
@@ -79,12 +73,14 @@ const HelpDesk = ({ id }: Props) => {
               />
             ))
           ) : (
-            <CardDescription className="text-muted-foreground">No Questions to show</CardDescription>
+            <CardDescription className="text-muted-foreground">
+              No Questions to show
+            </CardDescription>
           )}
         </Loader>
       </CardContent>
     </Card>
-  )
-}
+  );
+};
 
-export default HelpDesk
+export default HelpDesk;

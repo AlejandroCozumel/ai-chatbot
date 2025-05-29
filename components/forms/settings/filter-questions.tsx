@@ -1,24 +1,24 @@
-'use client'
-import Section from '@/components/section-label'
+"use client";
+import Section from "@/components/section-label";
 import {
   Card,
   CardContent,
   CardDescription,
   CardTitle,
-} from '@/components/ui/card'
-import { useFilterQuestions, useHelpDesk } from '@/hooks/settings/use-settings'
-import React from 'react'
-import FormGenerator from '../form-generator'
-import { Button } from '@/components/ui/button'
-import { Loader } from '@/components/loader'
+} from "@/components/ui/card";
+import { useFilterQuestions, useHelpDesk } from "@/hooks/settings/use-settings";
+import React from "react";
+import FormGenerator from "../form-generator";
+import { Button } from "@/components/ui/button";
+import { Loader } from "@/components/loader";
 
 type Props = {
-  id: string
-}
+  id: string;
+};
 
 const FilterQuestions = ({ id }: Props) => {
   const { register, errors, onAddFilterQuestions, isQuestions, loading } =
-    useFilterQuestions(id)
+    useFilterQuestions(id);
 
   return (
     <Card className="w-full grid grid-cols-1 lg:grid-cols-2 bg-card text-card-foreground border-border">
@@ -59,10 +59,7 @@ const FilterQuestions = ({ id }: Props) => {
               lines={5}
             />
           </div>
-          <Button
-            type="submit"
-            className="bg-warning text-warning-foreground hover:bg-warning/90 transition-all duration-200 font-semibold shadow-lg hover:shadow-xl"
-          >
+          <Button type="submit" variant="default">
             <Loader loading={loading}>Create</Loader>
           </Button>
         </form>
@@ -71,20 +68,19 @@ const FilterQuestions = ({ id }: Props) => {
         <Loader loading={loading}>
           {isQuestions.length ? (
             isQuestions.map((question) => (
-              <p
-                key={question.id}
-                className="font-bold text-foreground mb-3"
-              >
+              <p key={question.id} className="font-bold text-foreground mb-3">
                 {question.question}
               </p>
             ))
           ) : (
-            <CardDescription className="text-muted-foreground">No Questions</CardDescription>
+            <CardDescription className="text-muted-foreground">
+              No Questions
+            </CardDescription>
           )}
         </Loader>
       </CardContent>
     </Card>
-  )
-}
+  );
+};
 
-export default FilterQuestions
+export default FilterQuestions;
