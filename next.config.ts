@@ -7,6 +7,14 @@ const nextConfig: NextConfig = {
       {
         protocol: 'https',
         hostname: 'ucarecdn.com',
+        port: '',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'github.com',
+        port: '',
+        pathname: '/**',
       }
     ],
   },
